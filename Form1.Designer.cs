@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btn_7 = new System.Windows.Forms.Button();
             this.btn_8 = new System.Windows.Forms.Button();
             this.btn_9 = new System.Windows.Forms.Button();
@@ -47,12 +48,13 @@
             this.btn_next = new System.Windows.Forms.Button();
             this.btn_prev = new System.Windows.Forms.Button();
             this.btn_show = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.Tbx_Words = new System.Windows.Forms.RichTextBox();
+            this.tbx_WordBuild = new System.Windows.Forms.RichTextBox();
             this.tbx_Mode = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button1Timer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,6 +120,7 @@
             this.btn_1.TabIndex = 6;
             this.btn_1.Text = "1\r\nPQRS";
             this.btn_1.UseVisualStyleBackColor = true;
+            this.btn_1.Click += new System.EventHandler(this.btn_1_Click);
             // 
             // btn_2
             // 
@@ -154,6 +157,7 @@
             this.btn_000.TabIndex = 10;
             this.btn_000.Text = "000\r\n[_}";
             this.btn_000.UseVisualStyleBackColor = true;
+            this.btn_000.Click += new System.EventHandler(this.btn_000_Click);
             // 
             // btn_hash
             // 
@@ -226,21 +230,22 @@
             this.btn_show.Text = "Send Predicted";
             this.btn_show.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // Tbx_Words
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(13, 31);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(318, 107);
-            this.richTextBox1.TabIndex = 19;
-            this.richTextBox1.Text = "";
+            this.Tbx_Words.Location = new System.Drawing.Point(13, 31);
+            this.Tbx_Words.Name = "Tbx_Words";
+            this.Tbx_Words.Size = new System.Drawing.Size(318, 107);
+            this.Tbx_Words.TabIndex = 19;
+            this.Tbx_Words.Text = "";
             // 
-            // richTextBox2
+            // tbx_WordBuild
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(13, 144);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(236, 32);
-            this.richTextBox2.TabIndex = 20;
-            this.richTextBox2.Text = "";
+            this.tbx_WordBuild.Location = new System.Drawing.Point(13, 144);
+            this.tbx_WordBuild.Name = "tbx_WordBuild";
+            this.tbx_WordBuild.Size = new System.Drawing.Size(236, 32);
+            this.tbx_WordBuild.TabIndex = 20;
+            this.tbx_WordBuild.Text = "";
+            this.tbx_WordBuild.TextChanged += new System.EventHandler(this.tbx_WordBuild_TextChanged);
             // 
             // tbx_Mode
             // 
@@ -274,14 +279,19 @@
             this.configureToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.configureToolStripMenuItem.Text = "Configure";
             // 
+            // button1Timer
+            // 
+            this.button1Timer.Interval = 3000;
+            this.button1Timer.Tick += new System.EventHandler(this.button1Timer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 481);
             this.Controls.Add(this.tbx_Mode);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.tbx_WordBuild);
+            this.Controls.Add(this.Tbx_Words);
             this.Controls.Add(this.btn_show);
             this.Controls.Add(this.btn_prev);
             this.Controls.Add(this.btn_next);
@@ -333,12 +343,13 @@
         private System.Windows.Forms.Button btn_next;
         private System.Windows.Forms.Button btn_prev;
         private System.Windows.Forms.Button btn_show;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.RichTextBox Tbx_Words;
+        private System.Windows.Forms.RichTextBox tbx_WordBuild;
         private System.Windows.Forms.TextBox tbx_Mode;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configureToolStripMenuItem;
+        private System.Windows.Forms.Timer button1Timer;
 
     }
 }
