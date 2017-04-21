@@ -53,78 +53,63 @@ namespace minikeyboard
             }
             else if (button1Clicks == 2)
             {
-                button1Timer.Enabled = false;
-                button1Timer.Enabled = true;
-                word = word.Remove(word.Length - 1, 1);
-                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+                Button1_on_click_state();
                 word += "q";
                 Wordbuilder();
+                
             }
             else if (button1Clicks == 3)
             {
-                button1Timer.Enabled = false;
-                button1Timer.Enabled = true;
-                word = word.Remove(word.Length - 1, 1);
-                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+                Button1_on_click_state();
                 word += "r";
                 Wordbuilder();
             }
             else if (button1Clicks == 4)
             {
-                button1Timer.Enabled = false;
-                button1Timer.Enabled = true;
-                word = word.Remove(word.Length - 1);
-                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+                Button1_on_click_state();
                 word += "s";
                 Wordbuilder();
             }
             else if (button1Clicks == 5)
             {
-                button1Timer.Enabled = false;
-                button1Timer.Enabled = true;
-                word = word.Remove(word.Length - 1);
-                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+                Button1_on_click_state();
                 word += "1";
                 Wordbuilder();
             }
             else if (button1Clicks == 6)
             {
-                button1Timer.Enabled = false;
-                button1Timer.Enabled = true;
-                word = word.Remove(word.Length - 1);
-                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+                Button1_on_click_state();
                 word += "P";
                 Wordbuilder();
             }
             else if (button1Clicks == 7)
             {
-                button1Timer.Enabled = false;
-                button1Timer.Enabled = true;
-                word = word.Remove(word.Length - 1);
-                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+                Button1_on_click_state();
                 word += "Q";
                 Wordbuilder();
             }
             else if (button1Clicks == 8)
             {
-                button1Timer.Enabled = false;
-                button1Timer.Enabled = true;
-                word = word.Remove(word.Length - 1);
-                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+                Button1_on_click_state();
                 word += "R";
                 Wordbuilder();
             }
             else if (button1Clicks == 9)
             {
-                button1Timer.Enabled = false;
-                button1Timer.Enabled = true;
-                button1Clicks = 0;
-                word = word.Remove(word.Length - 1);
-                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+                Button1_on_click_state();
                 word += "S";
                 Wordbuilder();
                 word = "";
             }
+        }
+
+        public void Button1_on_click_state()
+        {
+            button1Timer.Enabled = false;
+            button1Timer.Enabled = true;
+            word = word.Remove(word.Length - 1, 1);
+            tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+            
         }
 
         private void tbx_WordBuild_TextChanged(object sender, EventArgs e)
