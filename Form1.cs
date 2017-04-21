@@ -41,17 +41,27 @@ namespace minikeyboard
 
             if (button1Clicks == 1)
             {
-               
+                if (button1Timer.Enabled == true)
                 {
                     tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
                     button1Timer.Enabled = false;
                 }
                 button1Timer.Enabled = true;
                 word += "p";
-               
+                Wordbuilder();
 
             }
-          
+            else if (button1Clicks == 2)
+            {
+                button1Timer.Enabled = false;
+                button1Timer.Enabled = true;
+                word = word.Remove(word.Length - 1, 1);
+                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+                word += "q";
+                Wordbuilder();
+            }
+           
+            
         }
 
         private void tbx_WordBuild_TextChanged(object sender, EventArgs e)
