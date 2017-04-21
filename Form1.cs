@@ -16,5 +16,10 @@ namespace minikeyboard
         {
             InitializeComponent();
         }
+
+        private void btn_mode_Click(object sender, EventArgs e)
+        {
+            tbx_Mode.Text = "Prediction";
+        }
     }
 }

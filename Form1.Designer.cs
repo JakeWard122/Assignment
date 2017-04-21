@@ -49,7 +49,7 @@
             this.btn_show = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbx_Mode = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -197,6 +197,7 @@
             this.btn_mode.TabIndex = 15;
             this.btn_mode.Text = "Mode";
             this.btn_mode.UseVisualStyleBackColor = true;
+            this.btn_mode.Click += new System.EventHandler(this.btn_mode_Click);
             // 
             // btn_next
             // 
@@ -241,13 +242,14 @@
             this.richTextBox2.TabIndex = 20;
             this.richTextBox2.Text = "";
             // 
-            // textBox1
+            // tbx_Mode
             // 
-            this.textBox1.Location = new System.Drawing.Point(255, 156);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(74, 20);
-            this.textBox1.TabIndex = 21;
+            this.tbx_Mode.Location = new System.Drawing.Point(255, 156);
+            this.tbx_Mode.Name = "tbx_Mode";
+            this.tbx_Mode.ReadOnly = true;
+            this.tbx_Mode.Size = new System.Drawing.Size(74, 20);
+            this.tbx_Mode.TabIndex = 21;
+            this.tbx_Mode.Text = "Multi-Press";
             // 
             // menuStrip1
             // 
@@ -277,7 +279,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 481);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbx_Mode);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.btn_show);
@@ -333,7 +335,7 @@
         private System.Windows.Forms.Button btn_show;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbx_Mode;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configureToolStripMenuItem;
