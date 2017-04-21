@@ -60,8 +60,71 @@ namespace minikeyboard
                 word += "q";
                 Wordbuilder();
             }
-           
-            
+            else if (button1Clicks == 3)
+            {
+                button1Timer.Enabled = false;
+                button1Timer.Enabled = true;
+                word = word.Remove(word.Length - 1, 1);
+                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+                word += "r";
+                Wordbuilder();
+            }
+            else if (button1Clicks == 4)
+            {
+                button1Timer.Enabled = false;
+                button1Timer.Enabled = true;
+                word = word.Remove(word.Length - 1);
+                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+                word += "s";
+                Wordbuilder();
+            }
+            else if (button1Clicks == 5)
+            {
+                button1Timer.Enabled = false;
+                button1Timer.Enabled = true;
+                word = word.Remove(word.Length - 1);
+                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+                word += "1";
+                Wordbuilder();
+            }
+            else if (button1Clicks == 6)
+            {
+                button1Timer.Enabled = false;
+                button1Timer.Enabled = true;
+                word = word.Remove(word.Length - 1);
+                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+                word += "P";
+                Wordbuilder();
+            }
+            else if (button1Clicks == 7)
+            {
+                button1Timer.Enabled = false;
+                button1Timer.Enabled = true;
+                word = word.Remove(word.Length - 1);
+                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+                word += "Q";
+                Wordbuilder();
+            }
+            else if (button1Clicks == 8)
+            {
+                button1Timer.Enabled = false;
+                button1Timer.Enabled = true;
+                word = word.Remove(word.Length - 1);
+                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+                word += "R";
+                Wordbuilder();
+            }
+            else if (button1Clicks == 9)
+            {
+                button1Timer.Enabled = false;
+                button1Timer.Enabled = true;
+                button1Clicks = 0;
+                word = word.Remove(word.Length - 1);
+                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+                word += "S";
+                Wordbuilder();
+                word = "";
+            }
         }
 
         private void tbx_WordBuild_TextChanged(object sender, EventArgs e)
@@ -69,11 +132,18 @@ namespace minikeyboard
            
         }
 
-      
+        public void Wordbuilder()
+        {
+            tbx_WordBuild.Text += word;
+        
+        
+        }
 
         private void button1Timer_Tick(object sender, EventArgs e)
         {
-            
+            word = "";
+            button1Timer.Enabled = false;
+            button1Clicks = 0;
         }
 
         private void btn_000_Click(object sender, EventArgs e)
