@@ -55,9 +55,12 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1Timer = new System.Windows.Forms.Timer(this.components);
-            this.button2timer = new System.Windows.Forms.Timer(this.components);
             this.lst_1 = new System.Windows.Forms.ListBox();
             this.lst_2 = new System.Windows.Forms.ListBox();
+            this.lst_3 = new System.Windows.Forms.ListBox();
+            this.lst_5 = new System.Windows.Forms.ListBox();
+            this.lst_4 = new System.Windows.Forms.ListBox();
+            this.lst_6 = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +72,7 @@
             this.btn_7.TabIndex = 0;
             this.btn_7.Text = "7\r\n. ,\"";
             this.btn_7.UseVisualStyleBackColor = true;
+            this.btn_7.Click += new System.EventHandler(this.btn_Click);
             // 
             // btn_8
             // 
@@ -78,6 +82,7 @@
             this.btn_8.TabIndex = 1;
             this.btn_8.Text = "8\r\nABC";
             this.btn_8.UseVisualStyleBackColor = true;
+            this.btn_8.Click += new System.EventHandler(this.btn_Click);
             // 
             // btn_9
             // 
@@ -87,6 +92,7 @@
             this.btn_9.TabIndex = 2;
             this.btn_9.Text = "9\r\nDEF";
             this.btn_9.UseVisualStyleBackColor = true;
+            this.btn_9.Click += new System.EventHandler(this.btn_Click);
             // 
             // btn_6
             // 
@@ -96,6 +102,7 @@
             this.btn_6.TabIndex = 3;
             this.btn_6.Text = "6\r\nMNO";
             this.btn_6.UseVisualStyleBackColor = true;
+            this.btn_6.Click += new System.EventHandler(this.btn_Click);
             // 
             // btn_4
             // 
@@ -105,6 +112,7 @@
             this.btn_4.TabIndex = 4;
             this.btn_4.Text = "4\r\nGHI";
             this.btn_4.UseVisualStyleBackColor = true;
+            this.btn_4.Click += new System.EventHandler(this.btn_Click);
             // 
             // btn_5
             // 
@@ -114,6 +122,7 @@
             this.btn_5.TabIndex = 5;
             this.btn_5.Text = "5\r\nJKL";
             this.btn_5.UseVisualStyleBackColor = true;
+            this.btn_5.Click += new System.EventHandler(this.btn_Click);
             // 
             // btn_1
             // 
@@ -143,6 +152,7 @@
             this.btn_3.TabIndex = 8;
             this.btn_3.Text = "3\r\nWXYZ";
             this.btn_3.UseVisualStyleBackColor = true;
+            this.btn_3.Click += new System.EventHandler(this.btn_Click);
             // 
             // btn_star
             // 
@@ -152,6 +162,7 @@
             this.btn_star.TabIndex = 9;
             this.btn_star.Text = "*-_";
             this.btn_star.UseVisualStyleBackColor = true;
+            this.btn_star.Click += new System.EventHandler(this.btn_Click);
             // 
             // btn_000
             // 
@@ -171,6 +182,7 @@
             this.btn_hash.TabIndex = 11;
             this.btn_hash.Text = "#\r\n0.00";
             this.btn_hash.UseVisualStyleBackColor = true;
+            this.btn_hash.Click += new System.EventHandler(this.btn_Click);
             // 
             // btn_Enter
             // 
@@ -267,7 +279,7 @@
             this.configureToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(615, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1050, 24);
             this.menuStrip1.TabIndex = 22;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -287,10 +299,6 @@
             // 
             this.button1Timer.Interval = 3000;
             this.button1Timer.Tick += new System.EventHandler(this.button1Timer_Tick);
-            // 
-            // button2timer
-            // 
-            this.button2timer.Interval = 3000;
             // 
             // lst_1
             // 
@@ -327,11 +335,81 @@
             this.lst_2.Size = new System.Drawing.Size(120, 134);
             this.lst_2.TabIndex = 24;
             // 
+            // lst_3
+            // 
+            this.lst_3.FormattingEnabled = true;
+            this.lst_3.Items.AddRange(new object[] {
+            "w",
+            "x",
+            "y",
+            "z",
+            "3",
+            "W",
+            "X",
+            "Y",
+            "Z"});
+            this.lst_3.Location = new System.Drawing.Point(647, 27);
+            this.lst_3.Name = "lst_3";
+            this.lst_3.Size = new System.Drawing.Size(120, 134);
+            this.lst_3.TabIndex = 25;
+            // 
+            // lst_5
+            // 
+            this.lst_5.FormattingEnabled = true;
+            this.lst_5.Items.AddRange(new object[] {
+            "j",
+            "k",
+            "l",
+            "5",
+            "J",
+            "K",
+            "L"});
+            this.lst_5.Location = new System.Drawing.Point(647, 307);
+            this.lst_5.Name = "lst_5";
+            this.lst_5.Size = new System.Drawing.Size(120, 134);
+            this.lst_5.TabIndex = 26;
+            // 
+            // lst_4
+            // 
+            this.lst_4.FormattingEnabled = true;
+            this.lst_4.Items.AddRange(new object[] {
+            "g",
+            "h",
+            "i",
+            "4",
+            "G",
+            "H",
+            "I"});
+            this.lst_4.Location = new System.Drawing.Point(647, 167);
+            this.lst_4.Name = "lst_4";
+            this.lst_4.Size = new System.Drawing.Size(120, 134);
+            this.lst_4.TabIndex = 27;
+            // 
+            // lst_6
+            // 
+            this.lst_6.FormattingEnabled = true;
+            this.lst_6.Items.AddRange(new object[] {
+            "m",
+            "n",
+            "o",
+            "6",
+            "M",
+            "N",
+            "O"});
+            this.lst_6.Location = new System.Drawing.Point(773, 27);
+            this.lst_6.Name = "lst_6";
+            this.lst_6.Size = new System.Drawing.Size(120, 134);
+            this.lst_6.TabIndex = 28;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 481);
+            this.ClientSize = new System.Drawing.Size(1050, 481);
+            this.Controls.Add(this.lst_6);
+            this.Controls.Add(this.lst_4);
+            this.Controls.Add(this.lst_5);
+            this.Controls.Add(this.lst_3);
             this.Controls.Add(this.lst_2);
             this.Controls.Add(this.lst_1);
             this.Controls.Add(this.tbx_Mode);
@@ -395,9 +473,12 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configureToolStripMenuItem;
         private System.Windows.Forms.Timer button1Timer;
-        private System.Windows.Forms.Timer button2timer;
         private System.Windows.Forms.ListBox lst_1;
         private System.Windows.Forms.ListBox lst_2;
+        private System.Windows.Forms.ListBox lst_3;
+        private System.Windows.Forms.ListBox lst_5;
+        private System.Windows.Forms.ListBox lst_4;
+        private System.Windows.Forms.ListBox lst_6;
 
     }
 }

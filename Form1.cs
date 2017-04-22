@@ -13,16 +13,6 @@ namespace minikeyboard
 
     public partial class Form1 : Form
     {
-        string word = "";
-        int button1Clicks = 0;
-        int button2Clicks = 0;
-        int button3Clicks = 0;
-        int button4Clicks = 0;
-        int button5Clicks = 0;
-        int button6Clicks = 0;
-        int button7Clicks = 0;
-        int button8Clicks = 0;
-
         ListBox CurrentList;
         Button CurrentButton;
 
@@ -106,15 +96,7 @@ namespace minikeyboard
         {
 
         }
-        public void Button2_on_click_state()
-        {
-            button2timer.Enabled = false;
-            button2timer.Enabled = true;
-            word = word.Remove(word.Length - 1, 1);
-            tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
-
-        }
-
+      
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
