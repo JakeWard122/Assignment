@@ -41,15 +41,15 @@ namespace minikeyboard
         {
             if (CurrentButton == (Button)sender && button1Timer.Enabled == true)
             {
-                int newindex = CurrentList.SelectedIndex++;
-                if (newindex >= CurrentList.Items.Count)
-                {
-                    CurrentList.SelectedIndex = 0;
-                }
-                else
+                button1Timer.Enabled = false;
+                int newindex = CurrentList.SelectedIndex + 1;
+                try
                 { CurrentList.SelectedIndex = newindex; }
+                catch
+                { CurrentList.SelectedIndex = 0; }
                 tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
                 tbx_WordBuild.Text += CurrentList.SelectedItem;
+                button1Timer.Enabled = true;
             }
             else
             {
@@ -57,6 +57,7 @@ namespace minikeyboard
                 string ButtNum = CurrentButton.Name.Split('_')[1];
                 CurrentList = (ListBox)this.Controls["lst_" + ButtNum];
                 button1Timer.Enabled = true;
+                CurrentList.SelectedIndex = 0;
                 tbx_WordBuild.Text += CurrentList.SelectedItem;
             }
             
