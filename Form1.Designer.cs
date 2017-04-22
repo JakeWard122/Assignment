@@ -396,7 +396,7 @@
             "M",
             "N",
             "O"});
-            this.lst_6.Location = new System.Drawing.Point(773, 27);
+            this.lst_6.Location = new System.Drawing.Point(849, 119);
             this.lst_6.Name = "lst_6";
             this.lst_6.Size = new System.Drawing.Size(120, 134);
             this.lst_6.TabIndex = 28;
