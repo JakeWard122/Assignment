@@ -88,8 +88,7 @@ namespace minikeyboard
             tbx_WordBuild.Text = "";
 
             button1Timer.Enabled = false;
-            button1Clicks = 0;
-            word = "";
+          
         }
 
         private void btn_2_Click(object sender, EventArgs e)
@@ -100,6 +99,20 @@ namespace minikeyboard
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSpaceBar_Click(object sender, EventArgs e)
+        {
+            tbx_WordBuild.Text += " "; 
+        }
+
+        private void btn_prev_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+            }
+            catch { }
         }
 
 

@@ -42,7 +42,7 @@
             this.btn_000 = new System.Windows.Forms.Button();
             this.btn_hash = new System.Windows.Forms.Button();
             this.btn_Enter = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
+            this.btnSpaceBar = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.btn_mode = new System.Windows.Forms.Button();
             this.btn_next = new System.Windows.Forms.Button();
@@ -61,6 +61,10 @@
             this.lst_5 = new System.Windows.Forms.ListBox();
             this.lst_4 = new System.Windows.Forms.ListBox();
             this.lst_6 = new System.Windows.Forms.ListBox();
+            this.lst_7 = new System.Windows.Forms.ListBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.lst_8 = new System.Windows.Forms.ListBox();
+            this.lst_9 = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -193,13 +197,15 @@
             this.btn_Enter.Text = "Enter";
             this.btn_Enter.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // btnSpaceBar
             // 
-            this.button14.Location = new System.Drawing.Point(255, 296);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(75, 51);
-            this.button14.TabIndex = 13;
-            this.button14.UseVisualStyleBackColor = true;
+            this.btnSpaceBar.Location = new System.Drawing.Point(255, 296);
+            this.btnSpaceBar.Name = "btnSpaceBar";
+            this.btnSpaceBar.Size = new System.Drawing.Size(75, 51);
+            this.btnSpaceBar.TabIndex = 13;
+            this.btnSpaceBar.Text = "Spacebar";
+            this.btnSpaceBar.UseVisualStyleBackColor = true;
+            this.btnSpaceBar.Click += new System.EventHandler(this.btnSpaceBar_Click);
             // 
             // button15
             // 
@@ -236,6 +242,7 @@
             this.btn_prev.TabIndex = 17;
             this.btn_prev.Text = "Previous";
             this.btn_prev.UseVisualStyleBackColor = true;
+            this.btn_prev.Click += new System.EventHandler(this.btn_prev_Click);
             // 
             // btn_show
             // 
@@ -330,7 +337,7 @@
             "T",
             "U",
             "V"});
-            this.lst_2.Location = new System.Drawing.Point(378, 167);
+            this.lst_2.Location = new System.Drawing.Point(510, 296);
             this.lst_2.Name = "lst_2";
             this.lst_2.Size = new System.Drawing.Size(120, 134);
             this.lst_2.TabIndex = 24;
@@ -396,16 +403,78 @@
             "M",
             "N",
             "O"});
-            this.lst_6.Location = new System.Drawing.Point(849, 119);
+            this.lst_6.Location = new System.Drawing.Point(773, 27);
             this.lst_6.Name = "lst_6";
             this.lst_6.Size = new System.Drawing.Size(120, 134);
             this.lst_6.TabIndex = 28;
+            // 
+            // lst_7
+            // 
+            this.lst_7.FormattingEnabled = true;
+            this.lst_7.Items.AddRange(new object[] {
+            ".",
+            ",",
+            "\"",
+            "7"});
+            this.lst_7.Location = new System.Drawing.Point(773, 167);
+            this.lst_7.Name = "lst_7";
+            this.lst_7.Size = new System.Drawing.Size(120, 134);
+            this.lst_7.TabIndex = 29;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Items.AddRange(new object[] {
+            ".",
+            ",",
+            "\"",
+            "7"});
+            this.listBox1.Location = new System.Drawing.Point(773, 307);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(120, 134);
+            this.listBox1.TabIndex = 30;
+            // 
+            // lst_8
+            // 
+            this.lst_8.FormattingEnabled = true;
+            this.lst_8.Items.AddRange(new object[] {
+            "a",
+            "b",
+            "c",
+            "8",
+            "A",
+            "B",
+            "C"});
+            this.lst_8.Location = new System.Drawing.Point(899, 27);
+            this.lst_8.Name = "lst_8";
+            this.lst_8.Size = new System.Drawing.Size(120, 134);
+            this.lst_8.TabIndex = 31;
+            // 
+            // lst_9
+            // 
+            this.lst_9.FormattingEnabled = true;
+            this.lst_9.Items.AddRange(new object[] {
+            "d",
+            "e",
+            "f",
+            "9",
+            "D",
+            "E",
+            "F"});
+            this.lst_9.Location = new System.Drawing.Point(899, 167);
+            this.lst_9.Name = "lst_9";
+            this.lst_9.Size = new System.Drawing.Size(120, 134);
+            this.lst_9.TabIndex = 32;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 481);
+            this.Controls.Add(this.lst_9);
+            this.Controls.Add(this.lst_8);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lst_7);
             this.Controls.Add(this.lst_6);
             this.Controls.Add(this.lst_4);
             this.Controls.Add(this.lst_5);
@@ -420,7 +489,7 @@
             this.Controls.Add(this.btn_next);
             this.Controls.Add(this.btn_mode);
             this.Controls.Add(this.button15);
-            this.Controls.Add(this.button14);
+            this.Controls.Add(this.btnSpaceBar);
             this.Controls.Add(this.btn_Enter);
             this.Controls.Add(this.btn_hash);
             this.Controls.Add(this.btn_000);
@@ -460,7 +529,7 @@
         private System.Windows.Forms.Button btn_000;
         private System.Windows.Forms.Button btn_hash;
         private System.Windows.Forms.Button btn_Enter;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnSpaceBar;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button btn_mode;
         private System.Windows.Forms.Button btn_next;
@@ -479,6 +548,10 @@
         private System.Windows.Forms.ListBox lst_5;
         private System.Windows.Forms.ListBox lst_4;
         private System.Windows.Forms.ListBox lst_6;
+        private System.Windows.Forms.ListBox lst_7;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox lst_8;
+        private System.Windows.Forms.ListBox lst_9;
 
     }
 }
