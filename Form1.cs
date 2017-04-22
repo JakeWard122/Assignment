@@ -23,6 +23,8 @@ namespace minikeyboard
         int button7Clicks = 0;
         int button8Clicks = 0;
 
+        ListBox CurrentList;
+
 
         public Form1()
         {
@@ -35,78 +37,88 @@ namespace minikeyboard
             tbx_Mode.Text = "Prediction";
         }
 
+        private void btn_Click(object sender, EventArgs e)
+        {
+            Button CurrentButton =  (Button)sender;
+            string ButtName = 
+            
+            CurrentList = (ListBox)this.Controls["lst_1"];
+        }
+
         private void btn_1_Click(object sender, EventArgs e)
         {
-            button1Clicks++;
+          
+            
+            //button1Clicks++;
 
-            if (button1Clicks == 1)
-            {
-                if (button1Timer.Enabled == true)
-                {
-                    tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
-                    button1Timer.Enabled = false;
-                }
-                button1Timer.Enabled = true;
-                word += "p";
-                Wordbuilder();
+            //if (button1Clicks == 1)
+            //{
+            //    if (button1Timer.Enabled == true)
+            //    {
+            //        tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+            //        button1Timer.Enabled = false;
+            //    }
+            //    button1Timer.Enabled = true;
+            //    word += "p";
+            //    Wordbuilder();
                 
-            }
-            else if (button1Clicks == 2)
-            {
-                Button1_on_click_state();
-                word += "q";
-                Wordbuilder();
-                word = "";
-            }
-            else if (button1Clicks == 3)
-            {
-                Button1_on_click_state();
-                word += "r";
-                Wordbuilder();
-                word = "";
-            }
-            else if (button1Clicks == 4)
-            {
-                Button1_on_click_state();
-                word += "s";
-                Wordbuilder();
-                word = "";
-            }
-            else if (button1Clicks == 5)
-            {
-                Button1_on_click_state();
-                word += "1";
-                Wordbuilder();
-                word = "";
-            }
-            else if (button1Clicks == 6)
-            {
-                Button1_on_click_state();
-                word += "P";
-                Wordbuilder();
-                word = "";
-            }
-            else if (button1Clicks == 7)
-            {
-                Button1_on_click_state();
-                word += "Q";
-                Wordbuilder();
-                word = "";
-            }
-            else if (button1Clicks == 8)
-            {
-                Button1_on_click_state();
-                word += "R";
-                Wordbuilder();
-                word = "";
-            }
-            else if (button1Clicks == 9)
-            {
-                Button1_on_click_state();
-                word += "S";
-                Wordbuilder();
-                word = "";
-            }
+            //}
+            //else if (button1Clicks == 2)
+            //{
+            //    Button1_on_click_state();
+            //    word += "q";
+            //    Wordbuilder();
+            //    word = "";
+            //}
+            //else if (button1Clicks == 3)
+            //{
+            //    Button1_on_click_state();
+            //    word += "r";
+            //    Wordbuilder();
+            //    word = "";
+            //}
+            //else if (button1Clicks == 4)
+            //{
+            //    Button1_on_click_state();
+            //    word += "s";
+            //    Wordbuilder();
+            //    word = "";
+            //}
+            //else if (button1Clicks == 5)
+            //{
+            //    Button1_on_click_state();
+            //    word += "1";
+            //    Wordbuilder();
+            //    word = "";
+            //}
+            //else if (button1Clicks == 6)
+            //{
+            //    Button1_on_click_state();
+            //    word += "P";
+            //    Wordbuilder();
+            //    word = "";
+            //}
+            //else if (button1Clicks == 7)
+            //{
+            //    Button1_on_click_state();
+            //    word += "Q";
+            //    Wordbuilder();
+            //    word = "";
+            //}
+            //else if (button1Clicks == 8)
+            //{
+            //    Button1_on_click_state();
+            //    word += "R";
+            //    Wordbuilder();
+            //    word = "";
+            //}
+            //else if (button1Clicks == 9)
+            //{
+            //    Button1_on_click_state();
+            //    word += "S";
+            //    Wordbuilder();
+            //    word = "";
+            //}
         }
 
         public void Button1_on_click_state()
@@ -219,6 +231,11 @@ namespace minikeyboard
             button2timer.Enabled = true;
             word = word.Remove(word.Length - 1, 1);
             tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
 

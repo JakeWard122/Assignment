@@ -56,6 +56,7 @@
             this.configureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1Timer = new System.Windows.Forms.Timer(this.components);
             this.button2timer = new System.Windows.Forms.Timer(this.components);
+            this.lst_1 = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,7 +122,7 @@
             this.btn_1.TabIndex = 6;
             this.btn_1.Text = "1\r\nPQRS";
             this.btn_1.UseVisualStyleBackColor = true;
-            this.btn_1.Click += new System.EventHandler(this.btn_1_Click);
+            this.btn_1.Click += new System.EventHandler(this.btn_Click);
             // 
             // btn_2
             // 
@@ -290,11 +291,31 @@
             // 
             this.button2timer.Interval = 3000;
             // 
+            // lst_1
+            // 
+            this.lst_1.FormattingEnabled = true;
+            this.lst_1.Items.AddRange(new object[] {
+            "p",
+            "q",
+            "r",
+            "s",
+            "1",
+            "P",
+            "Q",
+            "R",
+            "S"});
+            this.lst_1.Location = new System.Drawing.Point(434, 64);
+            this.lst_1.Name = "lst_1";
+            this.lst_1.Size = new System.Drawing.Size(120, 134);
+            this.lst_1.TabIndex = 23;
+            this.lst_1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 481);
+            this.Controls.Add(this.lst_1);
             this.Controls.Add(this.tbx_Mode);
             this.Controls.Add(this.tbx_WordBuild);
             this.Controls.Add(this.Tbx_Words);
@@ -357,6 +378,7 @@
         private System.Windows.Forms.ToolStripMenuItem configureToolStripMenuItem;
         private System.Windows.Forms.Timer button1Timer;
         private System.Windows.Forms.Timer button2timer;
+        private System.Windows.Forms.ListBox lst_1;
 
     }
 }
