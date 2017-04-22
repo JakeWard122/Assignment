@@ -24,7 +24,7 @@ namespace minikeyboard
         int button8Clicks = 0;
 
         ListBox CurrentList;
-
+        Button CurrentButton;
 
         public Form1()
         {
@@ -39,11 +39,34 @@ namespace minikeyboard
 
         private void btn_Click(object sender, EventArgs e)
         {
-            Button CurrentButton =  (Button)sender;
-            string ButtNum = CurrentButton.Name.Split('_')[1];
-            CurrentList = (ListBox)this.Controls["lst_" + ButtNum];
+            if (CurrentButton == (Button)sender && button1Timer.Enabled == true)
+            {
+                int newindex = CurrentList.SelectedIndex++;
+                if (newindex >= CurrentList.Items.Count)
+                {
+                    CurrentList.SelectedIndex = 0;
+                }
+                else
+                { CurrentList.SelectedIndex = newindex; }
+                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+                tbx_WordBuild.Text += CurrentList.SelectedItem;
+            }
+            else
+            {
+                CurrentButton = (Button)sender;
+                string ButtNum = CurrentButton.Name.Split('_')[1];
+                CurrentList = (ListBox)this.Controls["lst_" + ButtNum];
+                button1Timer.Enabled = true;
+                tbx_WordBuild.Text += CurrentList.SelectedItem;
+            }
+            
+            
+            
+            
 
         }
+
+
 
         private void btn_1_Click(object sender, EventArgs e)
         {
@@ -53,9 +76,9 @@ namespace minikeyboard
 
             //if (button1Clicks == 1)
             //{
-            //    if (button1Timer.Enabled == true)
+            //    if ()
             //    {
-            //        tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+            //        
             //        button1Timer.Enabled = false;
             //    }
             //    button1Timer.Enabled = true;
@@ -144,9 +167,7 @@ namespace minikeyboard
 
         private void button1Timer_Tick(object sender, EventArgs e)
         {
-            word = "";
             button1Timer.Enabled = false;
-            button1Clicks = 0;
         }
 
         private void btn_000_Click(object sender, EventArgs e)
