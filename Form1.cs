@@ -122,6 +122,11 @@ namespace minikeyboard
 
         }
 
+        private void btn_Enter_Click(object sender, EventArgs e)
+        {
+            Tbx_Words.Text = Tbx_Words.Text + Environment.NewLine; 
+        }
+
 
     }
 }
