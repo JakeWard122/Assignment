@@ -22,6 +22,9 @@ namespace minikeyboard
 
         }
 
+
+
+
         private void btn_mode_Click(object sender, EventArgs e)
         {
             tbx_Mode.Text = "Prediction";
@@ -112,6 +115,11 @@ namespace minikeyboard
            {
                 tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
 
 
