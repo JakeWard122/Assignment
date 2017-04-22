@@ -87,7 +87,7 @@ namespace minikeyboard
 
         private void btn_000_Click(object sender, EventArgs e)
         {
-            Tbx_Words.Text += tbx_WordBuild.Text;
+            Tbx_Words.Text += tbx_WordBuild.Text + " ";
             tbx_WordBuild.Text = "";
 
             button1Timer.Enabled = false;
