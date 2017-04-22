@@ -50,7 +50,7 @@ namespace minikeyboard
                     catch //will catch if index is above the max
                     { CurrentList.SelectedIndex = 0; }
                     Str_KeyStrokes = Str_KeyStrokes.Remove(Str_KeyStrokes.Length - 1); //remove the old char
-                    Str_KeyStrokes += CurrentList.SelectedItem; //add the new chhar to word builder
+                    Str_KeyStrokes += CurrentList.SelectedItem; //add the new chhar to Str_KeyStrokes
                     button1Timer.Enabled = true; //restart the timer to begin countdown again
                 }
                 else
@@ -65,10 +65,10 @@ namespace minikeyboard
                     button1Timer.Enabled = true;
                     //set the listbox index to be the first char
                     CurrentList.SelectedIndex = 0;
-                    //add the selected char to the word builder
+                    //add the selected char to the Str_KeyStrokes
                     Str_KeyStrokes += CurrentList.SelectedItem;
                 }
-
+                //Find matching words from list...  how do we handle count??
                 
 
             }
