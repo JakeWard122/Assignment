@@ -22,12 +22,17 @@ namespace minikeyboard
 
         }
 
-
-
-
         private void btn_mode_Click(object sender, EventArgs e)
         {
-            tbx_Mode.Text = "Prediction";
+            //Make mode toggle on click 
+            if (tbx_Mode.Text == "Multi-Press")
+            {
+                tbx_Mode.Text = "Prediction";
+            }
+            else
+            {
+                tbx_Mode.Text = "Multi-Press";
+            }
         }
 
         private void btn_Click(object sender, EventArgs e)
@@ -88,11 +93,9 @@ namespace minikeyboard
         private void btn_000_Click(object sender, EventArgs e)
         {
             Tbx_Words.Text += tbx_WordBuild.Text + " ";
-            lst_dictionary.Items.Add(Tbx_Words.Text);
+            lst_dictionary.Items.Add(tbx_WordBuild.Text);
             tbx_WordBuild.Text = "";
-
             button1Timer.Enabled = false;
-          
         }
 
         private void btn_2_Click(object sender, EventArgs e)

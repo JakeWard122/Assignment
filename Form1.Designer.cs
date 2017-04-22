@@ -330,7 +330,7 @@
             // 
             // tbx_Mode
             // 
-            this.tbx_Mode.Location = new System.Drawing.Point(255, 156);
+            this.tbx_Mode.Location = new System.Drawing.Point(255, 152);
             this.tbx_Mode.Name = "tbx_Mode";
             this.tbx_Mode.ReadOnly = true;
             this.tbx_Mode.Size = new System.Drawing.Size(74, 20);
@@ -527,7 +527,6 @@
             this.lst_dictionary.Name = "lst_dictionary";
             this.lst_dictionary.Size = new System.Drawing.Size(120, 420);
             this.lst_dictionary.TabIndex = 33;
-            this.lst_dictionary.Visible = false;
             // 
             // Form1
             // 
