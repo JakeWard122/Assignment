@@ -57,6 +57,7 @@
             this.button1Timer = new System.Windows.Forms.Timer(this.components);
             this.button2timer = new System.Windows.Forms.Timer(this.components);
             this.lst_1 = new System.Windows.Forms.ListBox();
+            this.lst_2 = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,7 +133,7 @@
             this.btn_2.TabIndex = 7;
             this.btn_2.Text = "2\r\nTUV";
             this.btn_2.UseVisualStyleBackColor = true;
-            this.btn_2.Click += new System.EventHandler(this.btn_2_Click);
+            this.btn_2.Click += new System.EventHandler(this.btn_Click);
             // 
             // btn_3
             // 
@@ -304,17 +305,34 @@
             "Q",
             "R",
             "S"});
-            this.lst_1.Location = new System.Drawing.Point(434, 64);
+            this.lst_1.Location = new System.Drawing.Point(378, 27);
             this.lst_1.Name = "lst_1";
             this.lst_1.Size = new System.Drawing.Size(120, 134);
             this.lst_1.TabIndex = 23;
             this.lst_1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // lst_2
+            // 
+            this.lst_2.FormattingEnabled = true;
+            this.lst_2.Items.AddRange(new object[] {
+            "t",
+            "u",
+            "v",
+            "2",
+            "T",
+            "U",
+            "V"});
+            this.lst_2.Location = new System.Drawing.Point(378, 167);
+            this.lst_2.Name = "lst_2";
+            this.lst_2.Size = new System.Drawing.Size(120, 134);
+            this.lst_2.TabIndex = 24;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 481);
+            this.Controls.Add(this.lst_2);
             this.Controls.Add(this.lst_1);
             this.Controls.Add(this.tbx_Mode);
             this.Controls.Add(this.tbx_WordBuild);
@@ -379,6 +397,7 @@
         private System.Windows.Forms.Timer button1Timer;
         private System.Windows.Forms.Timer button2timer;
         private System.Windows.Forms.ListBox lst_1;
+        private System.Windows.Forms.ListBox lst_2;
 
     }
 }
