@@ -108,11 +108,10 @@ namespace minikeyboard
 
         private void btn_prev_Click(object sender, EventArgs e)
         {
-            try
-            {
+           if(tbx_WordBuild.Text.Length > 0)
+           {
                 tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
-            }
-            catch { }
+           }
         }
 
 
