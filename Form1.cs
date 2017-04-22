@@ -15,6 +15,7 @@ namespace minikeyboard
     {
         ListBox CurrentList;
         Button CurrentButton;
+        string Str_KeyStrokes;
 
         public Form1()
         {
@@ -37,34 +38,72 @@ namespace minikeyboard
 
         private void btn_Click(object sender, EventArgs e)
         {
-            //Routine called by all multipress buttons 
-            if (CurrentButton == (Button)sender && button1Timer.Enabled == true)
+            if (tbx_Mode.Text == "Prediction" && lst_dictionary.Items.Count > 0) //Use predictive mode if set but also only if some words have been added to the dictionary
             {
-                button1Timer.Enabled = false; //Temporarily disable the timer 
-                int newindex = CurrentList.SelectedIndex + 1; //go to next listbox index
-                try
-                { CurrentList.SelectedIndex = newindex; }
-                catch //will catch if index is above the max
-                { CurrentList.SelectedIndex = 0; }
-                tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1); //remove the old char
-                tbx_WordBuild.Text += CurrentList.SelectedItem; //add the new chhar to word builder
-                button1Timer.Enabled = true; //restart the timer to begin countdown again
+                //Routine called by all multipress buttons 
+                if (CurrentButton == (Button)sender && button1Timer.Enabled == true)
+                {
+                    button1Timer.Enabled = false; //Temporarily disable the timer 
+                    int newindex = CurrentList.SelectedIndex + 1; //go to next listbox index
+                    try
+                    { CurrentList.SelectedIndex = newindex; }
+                    catch //will catch if index is above the max
+                    { CurrentList.SelectedIndex = 0; }
+                    Str_KeyStrokes = Str_KeyStrokes.Remove(Str_KeyStrokes.Length - 1); //remove the old char
+                    Str_KeyStrokes += CurrentList.SelectedItem; //add the new chhar to word builder
+                    button1Timer.Enabled = true; //restart the timer to begin countdown again
+                }
+                else
+                {
+                    //if first press find corresponding char list box (matches by number on end of name)
+                    CurrentButton = (Button)sender;
+                    //split button name by the underscore to get the number off the end of the button name
+                    string ButtNum = CurrentButton.Name.Split('_')[1];
+                    //get the list box control with the same number on the end
+                    CurrentList = (ListBox)this.Controls["lst_" + ButtNum];
+                    //start the timer 
+                    button1Timer.Enabled = true;
+                    //set the listbox index to be the first char
+                    CurrentList.SelectedIndex = 0;
+                    //add the selected char to the word builder
+                    Str_KeyStrokes += CurrentList.SelectedItem;
+                }
+
+                
+
             }
-            else
+            else //Multi-Press Mode
             {
-                //if first press find corresponding char list box (matches by number on end of name)
-                CurrentButton = (Button)sender;
-                //split button name by the underscore to get the number off the end of the button name
-                string ButtNum = CurrentButton.Name.Split('_')[1];
-                //get the list box control with the same number on the end
-                CurrentList = (ListBox)this.Controls["lst_" + ButtNum];
-                //start the timer 
-                button1Timer.Enabled = true;
-                //set the listbox index to be the first char
-                CurrentList.SelectedIndex = 0;
-                //add the selected char to the word builder
-                tbx_WordBuild.Text += CurrentList.SelectedItem;
+                //Routine called by all multipress buttons 
+                if (CurrentButton == (Button)sender && button1Timer.Enabled == true)
+                {
+                    button1Timer.Enabled = false; //Temporarily disable the timer 
+                    int newindex = CurrentList.SelectedIndex + 1; //go to next listbox index
+                    try
+                    { CurrentList.SelectedIndex = newindex; }
+                    catch //will catch if index is above the max
+                    { CurrentList.SelectedIndex = 0; }
+                    tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1); //remove the old char
+                    tbx_WordBuild.Text += CurrentList.SelectedItem; //add the new chhar to word builder
+                    button1Timer.Enabled = true; //restart the timer to begin countdown again
+                }
+                else
+                {
+                    //if first press find corresponding char list box (matches by number on end of name)
+                    CurrentButton = (Button)sender;
+                    //split button name by the underscore to get the number off the end of the button name
+                    string ButtNum = CurrentButton.Name.Split('_')[1];
+                    //get the list box control with the same number on the end
+                    CurrentList = (ListBox)this.Controls["lst_" + ButtNum];
+                    //start the timer 
+                    button1Timer.Enabled = true;
+                    //set the listbox index to be the first char
+                    CurrentList.SelectedIndex = 0;
+                    //add the selected char to the word builder
+                    tbx_WordBuild.Text += CurrentList.SelectedItem;
+                }
             }
+
             
             
             
