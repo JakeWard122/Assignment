@@ -55,6 +55,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configureToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.button1Timer = new System.Windows.Forms.Timer(this.components);
+            this.button2timer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,6 +131,7 @@
             this.btn_2.TabIndex = 7;
             this.btn_2.Text = "2\r\nTUV";
             this.btn_2.UseVisualStyleBackColor = true;
+            this.btn_2.Click += new System.EventHandler(this.btn_2_Click);
             // 
             // btn_3
             // 
@@ -284,6 +286,10 @@
             this.button1Timer.Interval = 3000;
             this.button1Timer.Tick += new System.EventHandler(this.button1Timer_Tick);
             // 
+            // button2timer
+            // 
+            this.button2timer.Interval = 3000;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -350,6 +356,7 @@
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configureToolStripMenuItem;
         private System.Windows.Forms.Timer button1Timer;
+        private System.Windows.Forms.Timer button2timer;
 
     }
 }

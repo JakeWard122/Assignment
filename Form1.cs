@@ -49,50 +49,56 @@ namespace minikeyboard
                 button1Timer.Enabled = true;
                 word += "p";
                 Wordbuilder();
-
+                
             }
             else if (button1Clicks == 2)
             {
                 Button1_on_click_state();
                 word += "q";
                 Wordbuilder();
-                
+                word = "";
             }
             else if (button1Clicks == 3)
             {
                 Button1_on_click_state();
                 word += "r";
                 Wordbuilder();
+                word = "";
             }
             else if (button1Clicks == 4)
             {
                 Button1_on_click_state();
                 word += "s";
                 Wordbuilder();
+                word = "";
             }
             else if (button1Clicks == 5)
             {
                 Button1_on_click_state();
                 word += "1";
                 Wordbuilder();
+                word = "";
             }
             else if (button1Clicks == 6)
             {
                 Button1_on_click_state();
                 word += "P";
                 Wordbuilder();
+                word = "";
             }
             else if (button1Clicks == 7)
             {
                 Button1_on_click_state();
                 word += "Q";
                 Wordbuilder();
+                word = "";
             }
             else if (button1Clicks == 8)
             {
                 Button1_on_click_state();
                 word += "R";
                 Wordbuilder();
+                word = "";
             }
             else if (button1Clicks == 9)
             {
@@ -141,6 +147,80 @@ namespace minikeyboard
             word = "";
         }
 
+        private void btn_2_Click(object sender, EventArgs e)
+        {
+            button2Clicks++;
+
+            if (button2Clicks == 1)
+            {
+                if (button2timer.Enabled == true)
+                {
+                    tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+                    button2timer.Enabled = false;
+                }
+                button2timer.Enabled = true;
+                word += "p";
+                Wordbuilder();
+                
+            }
+            else if (button2Clicks == 2)
+            {
+                Button2_on_click_state();
+                word += "t";
+                Wordbuilder();
+                word = "";
+            }
+            else if (button2Clicks == 3)
+            {
+                Button2_on_click_state();
+                word += "u";
+                Wordbuilder();
+                word = "";
+            }
+            else if (button2Clicks == 4)
+            {
+                Button2_on_click_state();
+                word += "v";
+                Wordbuilder();
+                word = "";
+            }
+            else if (button2Clicks == 5)
+            {
+                Button2_on_click_state();
+                word += "2";
+                Wordbuilder();
+                word = "";
+            }
+            else if (button2Clicks == 6)
+            {
+                Button2_on_click_state();
+                word += "T";
+                Wordbuilder();
+                word = "";
+            }
+            else if (button2Clicks == 7)
+            {
+                Button2_on_click_state();
+                word += "U";
+                Wordbuilder();
+                word = "";
+            }
+            else if (button2Clicks == 9)
+            {
+                Button2_on_click_state();
+                word += "V";
+                Wordbuilder();
+                word = "";
+            }
+        }
+        public void Button2_on_click_state()
+        {
+            button2timer.Enabled = false;
+            button2timer.Enabled = true;
+            word = word.Remove(word.Length - 1, 1);
+            tbx_WordBuild.Text = tbx_WordBuild.Text.Remove(tbx_WordBuild.Text.Length - 1);
+
+        }
 
 
     }
