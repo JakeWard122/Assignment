@@ -40,9 +40,9 @@ namespace minikeyboard
         private void btn_Click(object sender, EventArgs e)
         {
             Button CurrentButton =  (Button)sender;
-            string ButtName = 
-            
-            CurrentList = (ListBox)this.Controls["lst_1"];
+            string ButtNum = CurrentButton.Name.Split('_')[1];
+            CurrentList = (ListBox)this.Controls["lst_" + ButtNum];
+
         }
 
         private void btn_1_Click(object sender, EventArgs e)
