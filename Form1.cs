@@ -16,11 +16,13 @@ namespace minikeyboard
         ListBox CurrentList;
         Button CurrentButton;
         string Str_KeyStrokes;
+        Dictionary PredictiveDict = new Dictionary();
+        List<string> PredictiveWords; 
 
         public Form1()
         {
             InitializeComponent();
-
+            PredictiveDict.LoadDictionary();
         }
 
         private void btn_mode_Click(object sender, EventArgs e)
@@ -38,7 +40,7 @@ namespace minikeyboard
 
         private void btn_Click(object sender, EventArgs e)
         {
-            if (tbx_Mode.Text == "Prediction" && lst_dictionary.Items.Count > 0) //Use predictive mode if set but also only if some words have been added to the dictionary
+            if (tbx_Mode.Text == "Prediction") //Use predictive mode if set but also only if some words have been added to the dictionary
             {
                 //Routine called by all multipress buttons 
                 if (CurrentButton == (Button)sender && button1Timer.Enabled == true)
@@ -68,9 +70,17 @@ namespace minikeyboard
                     //add the selected char to the Str_KeyStrokes
                     Str_KeyStrokes += CurrentList.SelectedItem;
                 }
-                //Find matching words from list...  how do we handle count??
-                
-
+                //Find matching words from list...
+                PredictiveWords = PredictiveDict.ReturnWords(Str_KeyStrokes);
+                if (PredictiveWords.Count > 0)
+                {
+                    string PredictiveWord = PredictiveWords[0];
+                    SplicePredWord(Str_KeyStrokes, PredictiveWord);
+                }
+                else
+                {
+                    SplicePredWord(Str_KeyStrokes, Str_KeyStrokes);
+                }
             }
             else //Multi-Press Mode
             {
@@ -103,15 +113,17 @@ namespace minikeyboard
                     tbx_WordBuild.Text += CurrentList.SelectedItem;
                 }
             }
-
-            
-            
-            
-            
-
         }
 
+        public void SplicePredWord(string KeyStrokes, string Word)
+        {
+            string remainingchars = Word.Substring(KeyStrokes.Length);
+            tbx_WordBuild.ForeColor = Color.Black;
+            tbx_WordBuild.Text = KeyStrokes;
+            tbx_WordBuild.ForeColor = Color.Red;
+            tbx_WordBuild.Text += remainingchars;
 
+        }
 
         private void btn_1_Click(object sender, EventArgs e)
         {
@@ -139,7 +151,7 @@ namespace minikeyboard
         private void btn_000_Click(object sender, EventArgs e)
         {
             Tbx_Words.Text += tbx_WordBuild.Text + " ";
-            lst_dictionary.Items.Add(tbx_WordBuild.Text);
+            PredictiveDict.AddWord(tbx_WordBuild.Text);
             tbx_WordBuild.Text = "";
             button1Timer.Enabled = false;
         }

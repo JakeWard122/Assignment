@@ -64,7 +64,6 @@
             this.lst_7 = new System.Windows.Forms.ListBox();
             this.lst_8 = new System.Windows.Forms.ListBox();
             this.lst_9 = new System.Windows.Forms.ListBox();
-            this.lst_dictionary = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -378,7 +377,7 @@
             "Q",
             "R",
             "S"});
-            this.lst_1.Location = new System.Drawing.Point(474, 38);
+            this.lst_1.Location = new System.Drawing.Point(337, 38);
             this.lst_1.Name = "lst_1";
             this.lst_1.Size = new System.Drawing.Size(120, 134);
             this.lst_1.TabIndex = 23;
@@ -396,7 +395,7 @@
             "T",
             "U",
             "V"});
-            this.lst_2.Location = new System.Drawing.Point(600, 38);
+            this.lst_2.Location = new System.Drawing.Point(463, 38);
             this.lst_2.Name = "lst_2";
             this.lst_2.Size = new System.Drawing.Size(120, 134);
             this.lst_2.TabIndex = 24;
@@ -415,7 +414,7 @@
             "X",
             "Y",
             "Z"});
-            this.lst_3.Location = new System.Drawing.Point(726, 38);
+            this.lst_3.Location = new System.Drawing.Point(589, 38);
             this.lst_3.Name = "lst_3";
             this.lst_3.Size = new System.Drawing.Size(120, 134);
             this.lst_3.TabIndex = 25;
@@ -432,7 +431,7 @@
             "J",
             "K",
             "L"});
-            this.lst_5.Location = new System.Drawing.Point(600, 178);
+            this.lst_5.Location = new System.Drawing.Point(463, 178);
             this.lst_5.Name = "lst_5";
             this.lst_5.Size = new System.Drawing.Size(120, 134);
             this.lst_5.TabIndex = 26;
@@ -449,7 +448,7 @@
             "G",
             "H",
             "I"});
-            this.lst_4.Location = new System.Drawing.Point(474, 178);
+            this.lst_4.Location = new System.Drawing.Point(337, 178);
             this.lst_4.Name = "lst_4";
             this.lst_4.Size = new System.Drawing.Size(120, 134);
             this.lst_4.TabIndex = 27;
@@ -466,7 +465,7 @@
             "M",
             "N",
             "O"});
-            this.lst_6.Location = new System.Drawing.Point(726, 178);
+            this.lst_6.Location = new System.Drawing.Point(589, 178);
             this.lst_6.Name = "lst_6";
             this.lst_6.Size = new System.Drawing.Size(120, 134);
             this.lst_6.TabIndex = 28;
@@ -480,7 +479,7 @@
             ",",
             "\"",
             "7"});
-            this.lst_7.Location = new System.Drawing.Point(474, 318);
+            this.lst_7.Location = new System.Drawing.Point(337, 318);
             this.lst_7.Name = "lst_7";
             this.lst_7.Size = new System.Drawing.Size(120, 134);
             this.lst_7.TabIndex = 29;
@@ -497,7 +496,7 @@
             "A",
             "B",
             "C"});
-            this.lst_8.Location = new System.Drawing.Point(600, 318);
+            this.lst_8.Location = new System.Drawing.Point(463, 318);
             this.lst_8.Name = "lst_8";
             this.lst_8.Size = new System.Drawing.Size(120, 134);
             this.lst_8.TabIndex = 31;
@@ -514,26 +513,17 @@
             "D",
             "E",
             "F"});
-            this.lst_9.Location = new System.Drawing.Point(726, 318);
+            this.lst_9.Location = new System.Drawing.Point(589, 318);
             this.lst_9.Name = "lst_9";
             this.lst_9.Size = new System.Drawing.Size(120, 134);
             this.lst_9.TabIndex = 32;
             this.lst_9.Visible = false;
-            // 
-            // lst_dictionary
-            // 
-            this.lst_dictionary.FormattingEnabled = true;
-            this.lst_dictionary.Location = new System.Drawing.Point(348, 38);
-            this.lst_dictionary.Name = "lst_dictionary";
-            this.lst_dictionary.Size = new System.Drawing.Size(120, 420);
-            this.lst_dictionary.TabIndex = 33;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(940, 481);
-            this.Controls.Add(this.lst_dictionary);
             this.Controls.Add(this.lst_9);
             this.Controls.Add(this.lst_8);
             this.Controls.Add(this.lst_7);
@@ -614,7 +604,6 @@
         private System.Windows.Forms.ListBox lst_7;
         private System.Windows.Forms.ListBox lst_8;
         private System.Windows.Forms.ListBox lst_9;
-        private System.Windows.Forms.ListBox lst_dictionary;
 
     }
 }
