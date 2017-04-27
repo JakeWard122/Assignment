@@ -64,6 +64,7 @@
             this.lst_7 = new System.Windows.Forms.ListBox();
             this.lst_8 = new System.Windows.Forms.ListBox();
             this.lst_9 = new System.Windows.Forms.ListBox();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -349,6 +350,8 @@
             // 
             // fileToolStripMenuItem
             // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -519,6 +522,13 @@
             this.lst_9.TabIndex = 32;
             this.lst_9.Visible = false;
             // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Text = "save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -604,6 +614,7 @@
         private System.Windows.Forms.ListBox lst_7;
         private System.Windows.Forms.ListBox lst_8;
         private System.Windows.Forms.ListBox lst_9;
+        private System.Windows.Forms.ToolStripMenuItem saveToolStripMenuItem;
 
     }
 }

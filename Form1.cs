@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Microsoft.VisualBasic;
 
 namespace minikeyboard
 {
@@ -187,6 +189,37 @@ namespace minikeyboard
         private void btn_Enter_Click(object sender, EventArgs e)
         {
             Tbx_Words.Text = Tbx_Words.Text + Environment.NewLine; 
+        }
+
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            
+            }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e, string path)
+        {
+            
+           
+
+            //using (StreamReader readtext = new StreamReader("readme.txt"))
+            //{
+            //    string readMeText = readtext.ReadLine();
+            //}
+
+
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string input = "";
+            input = Microsoft.VisualBasic.Interaction.InputBox("Save as", "Save As", "Default", 0, 0);
+            using (StreamWriter writetext = new StreamWriter(input + ".txt"))
+            {
+                writetext.WriteLine(Tbx_Words.ToString());
+            }
+
+            MessageBox.Show("Files have been saved");    
         }
 
 
